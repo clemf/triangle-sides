@@ -14,5 +14,21 @@ function triangleSides(side1, side2, side3) {
 	else if(side1 !== side2 && side2 !== side3 || side3 !== side1) {
 		return 'scalene';
 	}
-	
+
 }
+
+
+$("form#triangle-sides").submit(function(event) {
+	var side1 = parseInt($("input#side1").val()),
+		  side2 = parseInt($("input#side2").val()),
+	    side3 = parseInt($("input#side3").val());
+
+	triangle = triangleSides(side1, side2, side3);
+
+	if(triangle === "invalid") {
+		$("#triangle-type").css('color', 'red').text("Invalid input");
+	}
+	
+
+	event.preventDefault();
+});
