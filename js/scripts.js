@@ -25,7 +25,7 @@ $("form#triangle-sides").submit(function(event) {
 	if(triangle === "invalid") {
 		$("#triangle-type").css('color', 'red').text("Invalid input");
 	} else {
-		$("#triangle-type").text(triangle);
+		$("#triangle-type").css('color', 'green')text(triangle);
 	}
 
 	$("#results").show();
