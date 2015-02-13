@@ -1,6 +1,6 @@
 function triangleSides(side1, side2, side3) {
 	if(side1 + side2 <= side3 || side2 + side3 <= side1 || side3 + side1 <= side2) {
-		return 'invalid';
+		return 'invalid triangle';
 	}
 	else if(side1 === side2 && side2 === side3) {
 		return 'equilateral';
@@ -22,10 +22,10 @@ $("form#triangle-sides").submit(function(event) {
 
 	triangle = triangleSides(side1, side2, side3);
 
-	if(triangle === "invalid") {
-		$("#triangle-type").css('color', 'red').text("Invalid input");
+	if(triangle.indexOf("invalid") != -1) {
+		$("#triangle-type").css('color', 'red').text(triangle);
 	} else {
-		$("#triangle-type").css('color', 'green')text(triangle);
+		$("#triangle-type").css('color', 'green').text(triangle);
 	}
 
 	$("#results").show();
