@@ -1,20 +1,16 @@
 function triangleSides(side1, side2, side3) {
-	
 	if(side1 + side2 <= side3 || side2 + side3 <= side1 || side3 + side1 <= side2) {
 		return 'invalid';
 	}
 	else if(side1 === side2 && side2 === side3) {
 		return 'equilateral';
 	}
-	
 	else if(side1 === side2 || side2 === side3 || side3 === side1) {
 		return 'isosceles';
 	}
-
 	else if(side1 !== side2 && side2 !== side3 || side3 !== side1) {
 		return 'scalene';
 	}
-
 }
 
 
@@ -27,8 +23,10 @@ $("form#triangle-sides").submit(function(event) {
 
 	if(triangle === "invalid") {
 		$("#triangle-type").css('color', 'red').text("Invalid input");
+	} else {
+		$("#triangle-type").text(triangle);
 	}
-	
+
 
 	event.preventDefault();
 });
