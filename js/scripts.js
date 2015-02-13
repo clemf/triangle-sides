@@ -24,7 +24,7 @@ $("form#triangle-sides").submit(function(event) {
 	triangle = triangleSides(side1, side2, side3);
 
 	if(isNaN(side1) || isNaN(side2) || isNaN(side3)) {
-		$("#triangle-type").css('color', 'red').text('Enter numbers only');
+		$("#triangle-type").css('color', 'red').text('enter numbers only');
 	} else if(triangle.indexOf("invalid") != -1) {
 		$("#triangle-type").css('color', 'red').text(triangle);
 	} else {
