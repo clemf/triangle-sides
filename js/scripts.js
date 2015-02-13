@@ -13,6 +13,7 @@ function triangleSides(side1, side2, side3) {
 	}
 }
 
+$("#results").hide();
 
 $("form#triangle-sides").submit(function(event) {
 	var side1 = parseInt($("input#side1").val()),
@@ -27,6 +28,6 @@ $("form#triangle-sides").submit(function(event) {
 		$("#triangle-type").text(triangle);
 	}
 
-
+	$("#results").show();
 	event.preventDefault();
 });
